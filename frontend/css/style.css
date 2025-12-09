@@ -11,6 +11,10 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+p {
+    font-family: nunito-parrafo;
+}
+
 body {
     max-width: 1000px;
     margin: 0 auto;
@@ -164,8 +168,8 @@ nav {
 }
 
 .collab-card {
-        background-color: #5a5a5a;
-
+        background-color: #cbcbcb;
+    color: rgb(255, 255, 255);
     padding: 25px;
     width: 260px;
     border-radius: 15px;
@@ -207,4 +211,11 @@ footer {
 @media (max-width: 768px) {
 
     
+}
+
+
+
+@font-face {
+    font-family: nunito-parrafo;
+    src: url(../assets/fonts/nunito/Nunito-Medium.ttf);
 }
