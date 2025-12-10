@@ -214,8 +214,13 @@ footer {
 }
 
 
-
+/*
+APARTADO DE FUENTES
+*/
 @font-face {
     font-family: nunito-parrafo;
     src: url(../assets/fonts/nunito/Nunito-Medium.ttf);
+
+    font-family: rubik-titulo;
+    src: url(../assets/fonts/rubik/Rubik-Bold.ttf);
 }
