@@ -1,0 +1,17 @@
+Buen trabajo, equipo sonrisa.
+
+Os comento a continuación las mejoras que quiero que incluyáis para el siguiente Hito
+
+Reformulad el objetivo del proyecto siguiendo el enfoque SMART, asegurándoos de que sea específico, medible, alcanzable, relevante y acotado en el tiempo (apoyaros en la tarea de la taquilla inteligente).
+
+Añadid un apartado de "Análisis de lo existente" (benchmarking) en el que comparéis al menos 2–3 aplicaciones similares del mercado, analizando sus funcionalidades principales, puntos fuertes, limitaciones y qué valor diferencial aporta vuestra propuesta.
+
+Revisad y reformulad completamente el punto 4 (Ciclo de vida del software), ya que actualmente no se está describiendo el modelo de desarrollo. Debéis explicar qué modelo vais a seguir (iterativo, incremental, en cascada, etc.), por qué lo habéis elegido y cómo se aplican sus fases (análisis, diseño, implementación, pruebas, despliegue y mantenimiento) a vuestro proyecto. Tenéis todas las explicaciones en el Tema 1 de Entornos (se explica mejor que con IA guiño )
+
+En la metodología ágil, aclarad el enfoque elegido. La frase “Después haremos un tablero (por ejemplo un Kanban o Scrum)” es incorrecta, ya que Scrum y Kanban no son equivalentes. Si trabajáis con Scrum, debéis definir claramente los roles (Product Owner, Scrum Master y equipo de desarrollo), la duración de los sprints (y cómo organizáis el trabajo dentro de cada Sprint) y los eventos principales (Sprint Planning, Daily, Review y Retrospective). Si utilizáis Kanban como herramienta visual, especificadlo correctamente como apoyo al proceso y nombrar el WIP.
+
+Los siguientes puntos, tenedlos en cuenta para ampliarlos cuando tengáis todo más avanzado.
+
+Ampliad la explicación del diagrama de clases, detallando mejor las relaciones y multiplicidades entre las entidades.
+
+Justificad de forma más técnica la arquitectura elegida para el sistema (por ejemplo, por qué se opta por una estructura modular, separación frontend/backend, uso de determinadas tecnologías, etc.).
