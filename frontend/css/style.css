@@ -1,24 +1,23 @@
 .aurora {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
-background: linear-gradient(
-  135deg,
-  #ffd0c4,
-  #ff9472,
-  #ff6a5e,
-  #ff3b3b,
-  #ff1a1a,
-  #ff0055,
-  #ff007f,
-  #f2709c,
-  #ff2f9f,
-  #d1006f
-);
+    background: linear-gradient(135deg,
+            #ffd0c4,
+            #ff9472,
+            #ff6a5e,
+            #ff3b3b,
+            #ff1a1a,
+            #ff0055,
+            #ff007f,
+            #f2709c,
+            #ff2f9f,
+            #d1006f);
     background-size: 600% 600%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: aurora 6s ease infinite;
 }
+
 * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -37,15 +36,17 @@ p {
 body {
     max-width: 2000px;
     margin: 0 auto;
-    
+
 }
 
 h1 {
     font-size: 75px;
 }
+
 main {
     text-align: center;
 }
+
 .main-buttons {
     display: flex;
     justify-content: center;
@@ -57,7 +58,7 @@ nav {
     position:fixed;
     top: 0;
     */
-    max-width: 60%;
+    max-width: 80%;
     padding: 5px;
     border-radius: 50px;
     margin: 15px;
@@ -65,19 +66,29 @@ nav {
     justify-content: space-between;
     align-items: center;
     color: white;
-    background: #f2709c;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #ff9472, #f2709c);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #f2709c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff9472, #f2709c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff9472, #f2709c);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin: 0 auto;
     margin-top: 15px;
+    box-shadow: rgb(149, 149, 149) 0px 1px 5px;
+}
+
+.logo-header {
+    font-size: 1.7em;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    margin-left: 30px;
+
 }
 
 .menu-links {
     display: flex;
-    gap: 30px;
     align-items: center;
-    justify-content: space-around;
-  
+    gap: 60px;
 }
 
 .menu-links a {
@@ -90,31 +101,44 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
     color: rgb(97, 97, 97);
 }
 
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
 
 
-.login-button {
+
+.login-signin-button {
     background-color: #f0f0f0;
     padding: 18px;
-    font-size: 1em;    border-radius: 20px;
+    font-size: 15px;
+    border-radius: 30px;
     border: 0px;
     transition: 0.3s ease;
-}
-.login-button:hover {
-    background-color: #cfcfcf;
+    margin: 10px;
+    padding: 10px 20px;
+    margin-right: 30px;
+    margin-left: -20px;
+    cursor: pointer;
 }
 
-.signup-button {
-    background-color: #8750ff;
+#sign-up {
+    background: linear-gradient(to right, #ef527c, #ff805d);
     color: white;
-    font-weight: bold;
-    padding: 18px;
-    font-size: 1em;
-    border-radius: 20px;
-    border: 0px;
-    transition: 0.3s ease;
 }
-.signup-button:hover {
-    background-color: #b04df6;
+
+#sign-up:hover {
+    background: linear-gradient(to right, #f0396a, #ff7149);
+}
+
+#log-in {
+    background-color: white;
 }
 
 .start-planning-button {
@@ -127,7 +151,7 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    background: linear-gradient(90deg, #8750ff, #5145ff); 
+    background: linear-gradient(90deg, #8750ff, #5145ff);
     overflow: hidden;
     transition: color 0.3s ease;
 }
@@ -136,7 +160,7 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #9b5cff, #7d3cff); 
+    background: linear-gradient(90deg, #9b5cff, #7d3cff);
     opacity: 0;
     transition: opacity 0.5s ease;
     border-radius: 25px;
@@ -149,11 +173,11 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
 }
 
 .start-planning-button:hover::before {
-    opacity: 1; 
+    opacity: 1;
 }
 
 .view-plans-button {
-      position: relative;
+    position: relative;
     display: inline-block;
     padding: 15px 30px;
     font-size: 1.2em;
@@ -166,6 +190,7 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
     overflow: hidden;
     transition: 0.3s ease;
 }
+
 .view-plans-button:hover {
     background-color: #d5d5d5;
 }
@@ -202,7 +227,7 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
 }
 
 .collab-card {
-        background-color: #cbcbcb;
+    background-color: #cbcbcb;
     color: rgb(255, 255, 255);
     padding: 25px;
     width: 260px;
@@ -237,15 +262,20 @@ footer {
 
 
 @keyframes aurora {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-@media (max-width: 768px) {
-
-    
-}
+@media (max-width: 768px) {}
 
 
 /*
