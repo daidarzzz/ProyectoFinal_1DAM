@@ -1,6 +1,10 @@
+header {
+     box-shadow: 0px 8px 20px rgba(63, 63, 63, 0.25);
+    border-radius: 40px;
+}
+
 .aurora {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
     background: linear-gradient(135deg,
             #ffd0c4,
             #ff9472,
@@ -17,6 +21,8 @@
     -webkit-text-fill-color: transparent;
     animation: aurora 6s ease infinite;
 }
+
+
 
 h2 {
     font-size: 1.9em;
@@ -63,7 +69,7 @@ nav{
     text-decoration: none;
     font-size: 1.1em;
 }
-.links a:hover {
+.links a:hover { 
     color: rgb(235, 235, 235);
     text-decoration: none;
     font-size: 1.1em;
@@ -139,7 +145,8 @@ main {
     padding-top: 25px;
     padding-bottom: 25px;
     border-radius: 30px;
-    box-shadow: rgb(227, 227, 227) 0px 1px 5px;
+    box-shadow: 4px 13px 10px -4px rgb(222, 222, 222);
+    margin-bottom: 30px;
 }
 
 .join-us h2 {
@@ -228,7 +235,7 @@ main {
 .ads-todo {
     display: flex;
     flex-direction: column;
-    width: 65%; /* Le damos un poco más de espacio al texto */
+    width: 65%; 
     text-align: left;
 }
 
@@ -236,17 +243,18 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%; /* El espacio reservado para el icono */
+    width: 30%; 
 }
 
 .title-ads {
-    margin-top: 15px;
+    margin-top: -25px;
     font-size: 1.9em;
     color: white;
 }
 
 
 .content-ads {
+    margin-top: -30px;
     font-size: 1.1em;
     color: white;
 }
@@ -267,8 +275,22 @@ main {
 
 }
 
+.community-plans {
 
+    margin-top: 100px;
+
+}
+
+.title-community {
+    font-size: 3.4em;
+    margin-bottom: -5px;
+}
+
+.community-plans-content {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .photo-community {
+    margin-top: 40px;
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -278,36 +300,32 @@ main {
 .tokio {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%), 
                 url(../assets/img/tokio.jpg);    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-    transition: 0.3s;
+
 }
 .roma {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%), 
                 url(../assets/img/roma.jpg);    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-    transition: 0.3s;
+
+
 }
 
 .paris {
        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%), 
                 url(../assets/img/paris.jpg);    background-size: cover;
-    background-position: center; 
+
+
+}
+
+.caja-community {
+        background-position: center; 
     background-repeat: no-repeat;
     transition: 0.3s;
+        box-shadow: 4px 13px 10px -4px rgb(152, 152, 152);
 }
 
-.paris:hover {
+.caja-community:hover {
     transform: scale(1.05);
-}
-
-.roma:hover {
-    transform: scale(1.05);
-}
-
-.tokio:hover {
-    transform: scale(1.05);
+    cursor: pointer
 }
 
 
@@ -357,6 +375,78 @@ main {
 @media (max-width: 768px) {}
 
 
+.price-clientes{
+    font-size: 2em;
+    
+}
+
+.client-free{
+   border-top-left-radius: 30px;
+   border-bottom-left-radius: 30px;
+
+}
+.client-premium{
+    
+}
+.client-anunciant{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.planes{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding-bottom: 25px;
+    
+}
+.caja{
+    width: 30%;
+    height: 600px;
+    background: #ffe7e9;
+}
 
 
+
+
+
+
+
+/*
+    APARTADO "COMO FUNCIONA"
+*/ 
+
+.como-funciona {
+    margin-top: 200px;
+}
+.circulos {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+.circulo {
+    display: flex;
+    background-color: rgb(255, 0, 0);
+    border: 10px solid rgb(255, 106, 0);
+    color: white;
+    font-weight: bold;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.secFunciona {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.secFunciona p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: -10px;
+}
 
