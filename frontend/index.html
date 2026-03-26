@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css" />
-  </head>
+  </head>  
 
   <body>
     <header>
@@ -149,14 +149,30 @@
       <section class="price-clientes">
         <div>
           <h2>Plan para cada viajero</h2>
+          
           <p>Precios</p>
           <div class="planes">
             <div class="client-free caja">
               <h2>Plan gratuito</h2>
-              <h1>$0 <p>/mes</p></h1>
+              <h1 class="precio">0€ <span class="mes">/mes</span></h1>
+              <div class="ultimo">
+              <button class="but-prices">Empieza gratis</button>
+              </div>
             </div>
-            <div class="client-premium caja"></div>
-            <div class="client-anunciant caja"></div>
+            <div id="premium" class="client-premium caja" >
+              <h2>Plan premium</h2>
+              <h1 class="precio">9€ <span class="mes">/mes</span></h1>
+              <div class="ultimo">
+              <button class="but-prices">Probar Premium</button>
+              </div>
+            </div>
+            
+            <div class="client-anunciant caja">
+              <h2>Plan anunciante</h2>
+              <div class="ultimo">
+              <button class="but-prices">Contactanos</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

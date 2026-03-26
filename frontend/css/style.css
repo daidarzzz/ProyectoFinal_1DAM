@@ -110,13 +110,8 @@ nav{
 */
 
 
-
-p {
-    font-family: nunito-parrafo;
-}
-
 body {
-    max-width: 170vh;
+    background-color: whitesmoke;
     margin: 0 auto;
 }
 
@@ -138,7 +133,6 @@ main {
     max-width: 1000px;
     margin: 0 auto;
     font-size: 1.5em;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
         background-image: linear-gradient(to right bottom, #ffffff, #fcf7fc, #feeff5, #ffe7e9, #ffe0d8);
     margin-top: 40px;
@@ -157,7 +151,6 @@ main {
     color: #525252;
     margin-bottom: 20px;
     font-weight: 400;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .join-us-button{
@@ -286,9 +279,7 @@ main {
     margin-bottom: -5px;
 }
 
-.community-plans-content {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+
 .photo-community {
     margin-top: 40px;
     display: flex;
@@ -343,14 +334,12 @@ main {
 .caja-community h4 {
     color: rgb(255, 113, 113);
     margin-bottom: -15px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left: 25px;
 }
 .caja-community p {
     color: white;
     font-weight: bold;
     font-size: 1.4em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left: 25px;
 }
 
@@ -373,24 +362,29 @@ main {
 }
 
 @media (max-width: 768px) {}
-
-
-.price-clientes{
+.price-clientes h2 {
     font-size: 2em;
+}
+.price-clientes h1 {
+    font-size: 4em;
+}
+.price-clientes{
+    background-color: rgb(255, 184, 137);
+    width: 100%;
+    margin: 0;
+    padding: 0;
     
 }
-
 .client-free{
-   border-top-left-radius: 30px;
-   border-bottom-left-radius: 30px;
+   padding: 30px;
 
 }
 .client-premium{
-    
+    padding: 30px;
+
 }
 .client-anunciant{
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    padding: 30px;
 }
 .planes{
     display: flex;
@@ -398,18 +392,41 @@ main {
     gap: 30px;
     padding-bottom: 25px;
     
+    
+}
+.precio{
+    
 }
 .caja{
-    width: 30%;
-    height: 600px;
-    background: #ffe7e9;
+    width: 20%;
+    height: 450px;
+    background-color: white;
+    border-radius: 30px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
-
-
-
-
-
-
+.mes{
+    font-size: 30px;
+}
+.but-prices{
+    width: 50%;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: #ff6d4d;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    
+    
+}
+.ultimo{
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
+}
 
 /*
     APARTADO "COMO FUNCIONA"
@@ -446,7 +463,6 @@ main {
 }
 
 .secFunciona p {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top: -10px;
 }
 
