@@ -1,0 +1,40 @@
+Muy buenas:
+
+He revisado el PDF de vuestra documentación y está bien encaminado. Os enumero a continuación lo que he visto.
+
+Comentaros también que deberíais ir dando ya formato al documento final: cabecera con la imagen corporativa del IES - está la imagen subida a Aules - índice bien cuidado, anexos de figuras con índice separado, imágenes con título y pie, numeración coherente, uso de tipografía correcta, etc. Intentad también unificar un poco más el estilo de redacción y mucho ojo con las "ayudas" de IA, porque en algunos tramos se nota un poco; conviene revisarlo y darle una forma más vuestra, con vuestras palabras. 
+
+Abstract
+Bien planteado y cumple con lo esencial: explica el problema, la solución propuesta, la metodología utilizada y el resultado alcanzado en esta fase. Como mejora, intentaría hacerlo un poco más natural y compacto en algunas frases, porque hay partes donde el estilo suena demasiado "plantilla".
+
+Introducción (objetivo y justificación)
+Se entiende la idea del proyecto. El objetivo está claro y la justificación tiene sentido dentro del contexto de la planificación de viajes. Aun así, convendría pulir un poco la redacción para que quede más formal y técnica, evitando expresiones demasiado coloquiales y alguna construcción algo forzada. 
+
+Requisitos funcionales de la aplicación
+Aquí es donde más os falta desarrollar. Ahora mismo explicáis bien el problema que resuelve el sistema y describís varias funcionalidades importantes, como la creación de viajes, la timeline o el drag & drop, pero falta presentar los requisitos funcionales en su formato (recordad la tarea de La Taquilla Inteligente). No basta solo con explicar lo que hará la aplicación en párrafos: convendría enumerar los requisitos funcionales de forma explícita, por ejemplo como lista tipo “RF01, RF02, RF03…”, indicando cada función concreta que el sistema debe permitir. Además, también sería recomendable separar mejor este apartado del de usuarios y diferenciar claramente entre requisitos funcionales y no funcionales, ya que estos últimos aparecen más adelante en metodología y deberían estar mejor organizados dentro del documento. 
+
+Tipo de usuarios
+Se queda un poco cojo ya que habláis del público general al que va dirigida la aplicación, pero no termináis de definir bien los tipos de usuario dentro del sistema ni qué puede hacer cada uno. Esto sería importante porque luego ayudaría a justificar mucho mejor el diagrama de casos de uso. Os recomendaría distinguir, por ejemplo, entre usuario registrado, usuario visitante o posibles perfiles con permisos distintos, si los hubiera.
+
+Metodología de desarrollo
+Bien encaminado. Se entiende el ciclo de vida elegido, las limitaciones del proyecto y la idea general de cómo vais a organizar el trabajo. La explicación de Scrum es correcta, pero algo genérica; ganaría más si la conectáis más directamente con vuestro caso real.
+
+Planificación inicial de tareas y roles del equipo
+Decir que las tareas se han ido eligiendo de forma aleatoria no transmite mucha planificación; sería mejor explicar de forma más concreta quién ha llevado cada parte, cómo os habéis coordinado y qué criterio habéis seguido para repartir el trabajo. Así este apartado quedaría mucho más sólido.
+
+Plan de negocio
+Bien enfocado. Se entiende el público objetivo, la utilidad social y empresarial, y también la idea general de costes y beneficios. Como mejora, intentaría evitar algunas repeticiones y darle un enfoque un poco más concreto y menos generalista, pero en conjunto cumple bien.
+
+Prevención de riesgos laborales
+OK. Recoge los riesgos más habituales del trabajo con equipos informáticos y propone medidas preventivas lógicas. No necesita grandes cambios, más allá de algún pequeño ajuste de redacción para mantener el mismo nivel formal que el resto del documento.
+
+
+Landing page
+La revisaré con vuestro profe de Lenguaje de Marcas y os daré su feedback.
+
+Lo que reforzaría: 
+- Enumerar los requisitos funcionales de forma clara, por ejemplo RF01, RF02, RF03... Redactarlos como acciones concretas del sistema, no solo como explicación general
+- Separar mejor requisitos funcionales, requisitos no funcionales y tipos de usuario
+- Darle un formato más uniforme a todo el documento
+- Añadir una breve explicación textual de los diagramas
+- Concretar mejor los roles del equipo y el reparto de tareas
