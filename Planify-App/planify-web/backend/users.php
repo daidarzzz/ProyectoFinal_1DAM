@@ -11,7 +11,7 @@
         $sql = "INSERT INTO USUARIO (nombre, email, contrasenia) VALUES ('$nombre', '$email', '$pass')";
 
         if (ejecutar($sql)) {
-            redirigir("../frontend/login.html");
+            redirigir("../frontend/login.php");
         } else {
             echo "Error al registrarte... " . mysqli_error($conn);
         }

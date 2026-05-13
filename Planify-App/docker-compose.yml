@@ -4,7 +4,7 @@ services:
     build: .
     container_name: planify_web
     volumes:
-      - ./www:/var/www/html
+      - ./planify-web:/var/www/html
     ports:
       - "8080:80"
     networks:
