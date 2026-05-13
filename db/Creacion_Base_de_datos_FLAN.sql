@@ -65,7 +65,7 @@ go
 
 create table VIAJE(
 
-idVIaje int identity primary key,
+idViaje int identity primary key,
 idUsuario int,
 fechaInicio date not null,
 fechaFin date not null,
@@ -110,9 +110,11 @@ go
 create table CIUDAD (
 
 idCiudad int identity primary key,
+idViaje int,
 idPais int,
 nombre varchar (100) not null,
-foreign key (idPais) references PAIS(idPais)
+foreign key (idPais) references PAIS(idPais),
+foreign key (idViaje) references VIAJE(idViaje)
 
 );
 
