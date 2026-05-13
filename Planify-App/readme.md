@@ -25,7 +25,7 @@ mysql -u root -proot PLANIFY -e "SHOW TABLES;"
 
 ## Hacer una consulta 
 ````sql
-"mysql -u root -proot PLANIFY -e "SHOW TABLES; SELECT * FROM USUARIO;"
+mysql -u root -proot PLANIFY -e "SHOW TABLES; SELECT * FROM USUARIO;"
 ````
 
 

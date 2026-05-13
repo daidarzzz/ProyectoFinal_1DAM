@@ -1,0 +1,24 @@
+
+
+.contenedorViajes {
+    display: flex;
+    flex-wrap: wrap;       
+    gap: 20px;             
+    padding: 20px;
+    width: 100%;           
+    justify-content: center; 
+}
+.tarjetaViaje {
+    background-color: rgb(229, 192, 255); 
+    padding: 20px;
+    border-radius: 15px;
+    min-width: 300px;        
+    display: flex;
+    flex-direction: column; 
+    text-align: left;
+}
+
+.section-viajes h2 {
+    margin-top: 150px;
+    text-align: center;
+}

@@ -13,7 +13,7 @@
         if (ejecutar($sql)) {
             redirigir("../frontend/login.php");
         } else {
-            echo "Error al registrarte... " . mysqli_error($conn);
+            echo "Error al registrarte... ";
         }
     }
 
