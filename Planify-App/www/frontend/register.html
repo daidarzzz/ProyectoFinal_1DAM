@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="./css/sign.css">
+</head>
+
+<body>
+
+    <main>
+
+        <section class="main-container">
+            <div class="left-container">
+                <h2>PLANIFY</h2>
+                <h3>Get access to all your plans, anytime, anywhere</h3>
+            </div>
+            <div class="right-container">
+                <form action="../backend/users.php" method="POST">
+                    <input type="hidden" name="accion" value="registro">
+                    <h2>Create an account</h2>
+                    <label for="name">Your full name</label><br>
+                    <input type="text" name="name" id="name" placeholder="joaquin magnolosio ignacio" required><br>
+                    <label for="email">Your email</label><br>
+                    <input type="email" name="email" id="email" placeholder="example@email.com" required><br>
+                    <label for="pass">Password</label><br>
+                    <input type="password" name="pass" id="pass" placeholder="example123" required><br>
+                    <button type="submit">Create Account</button>
+                    <a class="small-link" href="./login.php">Do you already have an account?</a>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>

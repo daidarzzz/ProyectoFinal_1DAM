@@ -1,0 +1,27 @@
+services:
+  web:
+    # Sustituimos "image: php:8.2-apache" por "build"
+    build: .
+    container_name: planify_web
+    volumes:
+      - ./www:/var/www/html
+    ports:
+      - "8080:80"
+    networks:
+      - planify_net
+
+  db:
+    image: mysql:8.0
+    container_name: planify_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./www/db:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    networks:
+      - planify_net
+
+networks:
+  planify_net:
+    driver: bridge

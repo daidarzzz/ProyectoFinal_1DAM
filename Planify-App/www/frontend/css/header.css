@@ -1,0 +1,81 @@
+/* 
+    ESTILOS PARA EN NAV
+*/
+
+header {
+     box-shadow: 0px 8px 20px rgba(63, 63, 63, 0.25);
+    border-radius: 40px;
+}
+nav{
+    display: flex;
+    background: linear-gradient(to right, #ff9472, #f2709c);
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 15px;
+    border-radius: 50px;
+}
+
+
+.logo {
+    margin-left: 25px;
+    width: 15%;
+}
+
+.links-buttons {
+    display: flex;
+    width: 85%;
+    justify-content: flex-end;
+    margin-right: 35px;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    gap: 30px;
+    margin-right: 20px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+.links a:hover { 
+    color: rgb(235, 235, 235);
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+
+.buttons-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.but-login {
+    background-color: white;
+    border-style: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 1.1em;
+}
+.but-signup {
+    background: linear-gradient(to right, #ef527c, #ff805d);
+    color: white;
+    border-style: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 1.1em;
+}
+
+
+.logo h3 {
+    font-size:1.5em;
+    color: white;
+    font-weight: bolder;
+}
+
+
+/* 
+    FINAL DE ESTILOS PARA EN NAV
+*/

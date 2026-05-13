@@ -1,0 +1,118 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #D1E9FF;
+
+}
+
+#bodylogin {
+    background-color: #ffe6d1
+}
+
+main {
+    margin: 0;
+    height: 100vh;          
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+}
+
+.main-container {
+    width: 100%;
+    max-width: 850px;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    margin: 0;
+    gap: 40px;
+}
+
+.left-container {
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%), 
+        url('../assets/img/torre.jpg'); 
+    
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.left-container h2,h3 {
+    padding-left:10px;
+    padding-right: 10px;
+    color: white;
+}
+
+.left-container h2 {
+    margin-bottom: -18px;
+    font-weight: bolder;
+    font-size: 2.5em;
+    text-align:justify;
+}
+.left-container h3 {
+    text-align: left;
+    font-size:1.7em;
+}
+.right-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-container h2 {
+    font-size: 2.7em;
+}
+
+.right-container label {
+    font-size: 1.2em; /* Bajamos un pelín el tamaño para que sea más elegante */
+    text-align: left;
+    display: block;   /* ¡ESTA ES LA CLAVE! Al ser block, ocupa toda la línea */
+    width: 100%;
+    font-weight: bold;
+    color: #444;      /* Un gris oscuro queda mejor que negro puro */
+}
+
+.right-container input {
+    width: 95%;    
+    margin-top: 5px;   
+    margin-bottom: 20px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.right-container button {
+    width: 95%;    
+    margin-top: 15px;   
+    margin-bottom: 20px; 
+    padding: 10px;
+    border-style: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background-color: #6863ff;
+}
+.right-container button:hover {
+    background-color: #554fff;
+    cursor: pointer;
+}
+.right-container #login {
+    background-color: #ffa963;
+}
+.right-container #login:hover {
+    background-color: #ff8c2e;
+}
+
+.small-link{
+    margin-top: 25px;
+    color: rgb(98, 98, 255);
+}
