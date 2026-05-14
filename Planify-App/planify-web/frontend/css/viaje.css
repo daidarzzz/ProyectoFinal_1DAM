@@ -1,24 +1,71 @@
-
-
 .contenedorViajes {
     display: flex;
-    flex-wrap: wrap;       
-    gap: 20px;             
+    flex-wrap: wrap;
+    gap: 20px;
     padding: 20px;
-    width: 100%;           
-    justify-content: center; 
+    width: 100%;
+    justify-content: center;
 }
+
+
+
 .tarjetaViaje {
-    background-color: rgb(229, 192, 255); 
-    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    padding: 0; 
     border-radius: 15px;
-    min-width: 300px;        
+    min-width: 300px;
     display: flex;
-    flex-direction: column; 
-    text-align: left;
+    flex-direction: column;
+    transition: 0.1s;
+}
+
+.tarjetaViaje:hover {
+    scale: 1.02;
+}
+
+.details {
+    padding: 10px;
+    background-color: #ff5481;
+    border-radius: 150px;
+    border-style: none;
+}
+
+.details a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
 }
 
 .section-viajes h2 {
     margin-top: 150px;
     text-align: center;
 }
+
+
+.title {
+    width: 100%; 
+    padding: 15px;
+    font-size: 1.1em;
+    background-color: #647eff; 
+    color: white;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 15px;
+}
+
+.tarjetaViaje h4, .tarjetaViaje p {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.details {
+    margin: 10px 20px 20px 20px; 
+    padding: 10px;
+    background-color: #8599ff;
+    border-radius: 150px;
+}
+
+
+

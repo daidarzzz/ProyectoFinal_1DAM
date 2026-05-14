@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
     <link rel="stylesheet" href="./css/sign.css">
+    <style>
+        .alert {
+            color: red;
+            font-weight: bolder ;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,7 +31,7 @@
                     <input type="text" name="name" id="name" placeholder="joaquin magnolosio ignacio" required><br>
                     <label for="email">Your email</label><br>
                     <input type="email" name="email" id="email" placeholder="example@email.com" required><br>
-                    <label for="pass">Password</label><br>
+                    <label for="pass">Password <span class="alert"><small>AVISO! las contraseñas se guardan en texto plano, no uses contraseñas importantes</small> </span></label><br>
                     <input type="password" name="pass" id="pass" placeholder="example123" required><br>
                     <button type="submit">Create Account</button>
                     <a class="small-link" href="./login.php">Do you already have an account?</a>

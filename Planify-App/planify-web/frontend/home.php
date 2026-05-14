@@ -22,6 +22,7 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
   <link rel="stylesheet" href="./css/fonts.css">
   <link rel="stylesheet" href="./css/home.css">
   <link rel="stylesheet" href="./css/viaje.css">
+  <link rel="stylesheet" href="./css/popup.css">
 
   <style>
     #user {
@@ -46,7 +47,7 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
         <div class="links-buttons">
           <div class="links">
             <a href="./home.php">Home</a>
-                    <a href="./communityPlans.php">Community plans</a>
+            <a href="./communityPlans.php">Community plans</a>
             <a href="./landing.html">Landing</a>
           </div>
           <div class="buttons-nav">
@@ -62,47 +63,47 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
 
     <main>
       <h1>Welcome, <?php echo $user['nombre']; ?>!</h1>
-      <p>Has entrado correctamente a Planify.</p>
+      <p>You have successfully logged in to Planify.</p>
 
       <button id="createPlanBut">Create plan</button>
 
-      <section id="createPlanContainer">
-        <div class="caja-formulario">
+      <section class="mainContainer">
+        <div class="caja2">
 
           <h1>Create your plan</h1>
 
           <p>
-            Rellena la información para crear tu nuevo plan de viaje.
+            Please fill in the details to create your new travel plan.
           </p>
 
           <form action="../backend/viaje.php" method="POST">
-            <div class="rellenar-viaje">
-              <label for="nombre_viaje">Nombre del viaje</label>
+            <div class="rellenar">
+              <label for="nombre_viaje">Name of the trip</label>
               <input type="text" id="nombre_viaje" name="nombre_viaje" placeholder="Verano en Japón" required>
             </div>
-            <div class="rellenar-viaje">
-              <label for="pais">País de destino</label>
+            <div class="rellenar">
+              <label for="pais">Country</label>
               <input type="text" id="pais" name="pais" placeholder="Japón" required>
             </div>
-            <div class="rellenar-viaje">
-              <label for="fecha_inicio">Fecha de inicio</label>
+            <div class="rellenar">
+              <label for="fecha_inicio">Start date</label>
               <input type="date" id="fecha_inicio" name="fecha_inicio" required>
             </div>
-            <div class="rellenar-viaje">
-              <label for="fecha_fin">Fecha de fin</label>
+            <div class="rellenar">
+              <label for="fecha_fin">End date</label>
               <input type="date" id="fecha_fin" name="fecha_fin" required>
             </div>
-            <div class="rellenar-viaje">
-              <label for="estado">Estado</label>
+            <div class="rellenar">
+              <label for="estado">Status</label>
               <select id="estado" name="estado" required>
-                <option value="" disabled selected>Selecciona un estado</option>
-                <option value="Finalizado">Finalizado</option>
-                <option value="En curso">En curso</option>
-                <option value="Pendiente">Pendiente</option>
+                <option value="" disabled selected>Select status</option>
+                <option value="Finalizado">Completed</option>
+                <option value="En curso">In progress</option>
+                <option value="Pendiente">Pending</option>
               </select>
             </div>
-            <button type="submit" id="boton-crear-viaje">Crear viaje</button>
-            <button type="reset" id="boton-cerrar">Cerrar</button>
+            <button type="submit" id="boton-crear-viaje">Create a trip</button>
+            <button type="reset" id="boton-cerrar">Close</button>
 
           </form>
 
@@ -124,15 +125,14 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
           $ini    = $viaje['fechaInicio'];
           $fin    = $viaje['fechaFin'];
           $est    = $viaje['estado'];
-          $pai    = consulta("SELECT * FROM PAIS WHERE idPais = '$viaje[idPais]'");
-        ?>
+          $pai = consulta("SELECT * FROM PAIS WHERE idPais = " . $viaje['idPais']);        ?>
           <div class="tarjetaViaje">
-            <h3><?= $nom ?></h3>
-            <h3><?= $pai['nombre'] ?></h3>
+            <button class="title"><?= $nom ?></button>
+            <h4>País: <?= $pai['nombre'] ?></h4>
             <p>Desde: <?= $ini ?></p>
             <p>Hasta: <?= $fin ?></p>
             <p>Estado: <?= $est ?></p>
-            <a href="#">Ver detalles</a>
+            <button class="details"><a href="#">View details</a></button>
           </div>
         <?php endforeach; ?>
       <?php endif; ?>
@@ -148,7 +148,7 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
   <script>
     const butAbrir = document.getElementById('createPlanBut')
 
-    const windowPlanContainer = document.getElementById('createPlanContainer')
+    const windowPlanContainer = document.querySelector('.mainContainer')
 
     const butCerrar = document.getElementById('boton-cerrar')
 

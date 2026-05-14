@@ -19,7 +19,6 @@ main {
 .main-container {
     width: 100%;
     max-width: 850px;
-    height: 60vh;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -115,4 +114,14 @@ main {
 .small-link{
     margin-top: 25px;
     color: rgb(98, 98, 255);
+}
+
+
+@media (max-width: 720px) {
+    .left-container {
+        display: none;
+    }
+    .right-container {
+        width: 100%;
+    }
 }

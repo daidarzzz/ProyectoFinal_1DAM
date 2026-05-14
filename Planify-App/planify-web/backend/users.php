@@ -8,6 +8,15 @@
     if ($accion == 'registro') {
         $nombre = $_POST['name'];
 
+        $existe = consulta("SELECT * FROM USUARIO WHERE email = '$email' OR nombre = '$nombre'");
+
+        if ($existe) {
+
+            die("Error: El nombre de usuario o correo ya está en uso.");
+            
+        }
+
+
         $sql = "INSERT INTO USUARIO (nombre, email, contrasenia) VALUES ('$nombre', '$email', '$pass')";
 
         if (ejecutar($sql)) {

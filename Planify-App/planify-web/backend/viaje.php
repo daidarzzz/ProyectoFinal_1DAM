@@ -1,4 +1,5 @@
 <?php 
+    session_start(); 
     include 'db.php';
     
     $nombreViaje = $_POST['nombre_viaje'];
@@ -9,7 +10,6 @@
     $idUser = sesion_get('idUsuario');
 
     if($idUser) {
-
         $existe = consulta("SELECT nombre FROM VIAJE WHERE idUsuario = '$idUser' AND nombre = '$nombreViaje'");        
         if ($existe) {
             die("Error, ya existe un viaje con ese nombre.");
@@ -22,21 +22,17 @@
             $paisId = consulta("SELECT idPais FROM PAIS WHERE nombre = '$pais'");
         }
 
+        $idRealPais = $paisId['idPais'];
+
         $sql = "INSERT INTO VIAJE (nombre, fechaInicio, fechaFin, estado, idUsuario, idPais) 
-        VALUES ('$nombreViaje', '$fechaInicio', '$fechaFin', '$estado', $idUser, $paisId[idPais])";
+        VALUES ('$nombreViaje', '$fechaInicio', '$fechaFin', '$estado', $idUser, $idRealPais)";
         
         if(ejecutar($sql)) {
             redirigir("../frontend/home.php");
         } else {
             echo "No se pudo insertar el viaje";
         }
-
-
-
-
     } else {
         redirigir("../frontend/login.php");
     }
-
-    
 ?>

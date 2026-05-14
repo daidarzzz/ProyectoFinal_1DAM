@@ -15,71 +15,89 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario != '$id' ORDER BY 
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lan/* Ajustado para que quepan 3 */g="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/fonts.css">
-    <link rel="stylesheet" href="./css/viaje.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/viaje.css">
+  <link rel="stylesheet" href="./css/community.css">
+
+  <style>
+    #user {
+      background-color: #ff396e;
+    }
+
+    #user a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h3>PLANIFY</h3>
+  <header>
+    <nav>
+      <div class="logo">
+        <h3>PLANIFY</h3>
+      </div>
+      <div class="links-buttons">
+        <div class="links">
+          <a href="./home.php">Home</a>
+          <a href="./communityPlans.php">Community plans</a>
+          <a href="./landing.html">Landing</a>
+        </div>
+        <div class="buttons-nav">
+          <button class="but-login" id="user"><a href="./account.php"><?php echo $user['nombre']; ?></a></button>
+          <button class="but-login logout">
+            <a href="../backend/logout.php" style="text-decoration: none; color: inherit;">Log out</a>
+          </button>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+
+    <h1>Community Plans</h1>
+    <section class="section-viajes">
+      <div class="contenedorViajes">
+
+        <?php if (empty($viajes)): ?>
+          <p>You haven't created any trips yet. Start by creating one!</p>
+        <?php else: ?>
+          <?php foreach ($viajes as $viaje):
+            $idV    = $viaje['idViaje'];
+            $nom    = $viaje['nombre'];
+            $ini    = $viaje['fechaInicio'];
+            $fin    = $viaje['fechaFin'];
+            $est    = $viaje['estado'];
+            $pai = consulta("SELECT * FROM PAIS WHERE idPais = " . $viaje['idPais']);
+            $autor = consulta("SELECT nombre FROM USUARIO WHERE idUsuario = " . $viaje['idUsuario']);
+
+          ?>
+            <div class="tarjetaViaje">
+              <button class="title"><?= $nom ?></button>
+              <h4>País: <?= $pai['nombre'] ?></h4>
+              <p>Desde: <?= $ini ?></p>
+              <p>Hasta: <?= $fin ?></p>
+              <p>Estado: <?= $est ?></p>
+              <p>Autor: <?= $autor['nombre'] ?></p>
+              <button class="details"><a href="#">View details</a></button>
             </div>
-            <div class="links-buttons">
-                <div class="links">
-                    <a href="./home.php">Home</a>
-                    <a href="./communityPlans.php">Community plans</a>
-                    <a href="./landing.html">Landing</a>
-                </div>
-                <div class="buttons-nav">
-                    <button class="but-login"><a href="./login.html">Log in</a></button>
-                    <button class="but-signup"><a href="./register.html">Sign up</a></button>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-
-        <h1>Community Plans</h1>
-  <section class="section-viajes">
-    <div class="contenedorViajes">
-
-      <?php if (empty($viajes)): ?>
-        <p>No hay viajes disponibles en la comunidad.</p>
-      <?php else: ?>
-        <?php foreach ($viajes as $viaje):
-          $idV    = $viaje['idViaje'];
-          $nom    = $viaje['nombre'];
-          $ini    = $viaje['fechaInicio'];
-          $fin    = $viaje['fechaFin'];
-          $est    = $viaje['estado'];
-          $idU    = $viaje['idUsuario'];  
-          $user = consulta("SELECT nombre FROM USUARIO WHERE idUsuario = '$idU'");
-        ?>
-          <div class="tarjetaViaje">
-            <h3><?= $nom ?></h3>
-            <p>Desde: <?= $ini ?></p>
-            <p>Hasta: <?= $fin ?></p>
-            <p>Estado: <?= $est ?></p>
-            <p>Creado por: <?= $user['nombre'] ?></p>
-            <a href="#">Ver detalles</a>
-          </div>
-        <?php endforeach; ?>
-      <?php endif; ?>
-    </div>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
 
 
 
-  </section>
+    </section>
 
-    </main>
+  </main>
 </body>
 
 </html>
