@@ -23,6 +23,7 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario != '$id' ORDER BY 
     <title>Document</title>
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/viaje.css">
 </head>
 
 <body>
@@ -48,12 +49,10 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario != '$id' ORDER BY 
 
         <h1>Community Plans</h1>
   <section class="section-viajes">
-    <h2>Mis viajes</h2>
-
     <div class="contenedorViajes">
 
       <?php if (empty($viajes)): ?>
-        <p>You haven't created any trips yet. Start by creating one!</p>
+        <p>No hay viajes disponibles en la comunidad.</p>
       <?php else: ?>
         <?php foreach ($viajes as $viaje):
           $idV    = $viaje['idViaje'];
@@ -61,12 +60,15 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario != '$id' ORDER BY 
           $ini    = $viaje['fechaInicio'];
           $fin    = $viaje['fechaFin'];
           $est    = $viaje['estado'];
+          $idU    = $viaje['idUsuario'];  
+          $user = consulta("SELECT nombre FROM USUARIO WHERE idUsuario = '$idU'");
         ?>
           <div class="tarjetaViaje">
             <h3><?= $nom ?></h3>
             <p>Desde: <?= $ini ?></p>
             <p>Hasta: <?= $fin ?></p>
             <p>Estado: <?= $est ?></p>
+            <p>Creado por: <?= $user['nombre'] ?></p>
             <a href="#">Ver detalles</a>
           </div>
         <?php endforeach; ?>

@@ -15,6 +15,8 @@ if (sesion_get('idUsuario')) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login to Planify</title>
     <link rel="stylesheet" href="./css/sign.css">
+
+    
 </head>
 
 <body id="bodylogin">

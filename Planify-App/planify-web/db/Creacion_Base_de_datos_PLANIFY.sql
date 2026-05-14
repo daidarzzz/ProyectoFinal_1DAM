@@ -35,16 +35,31 @@ CREATE TABLE ANUNCIANTE_ANUNCIO (
     FOREIGN KEY (idUsuario) REFERENCES ANUNCIANTE(idUsuario),
     FOREIGN KEY (idAnuncio) REFERENCES ANUNCIO(idAnuncio)
 );
+CREATE TABLE PAIS (
+    idPais INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR (100) NOT NULL UNIQUE
+);
 
+CREATE TABLE CIUDAD (
+    idCiudad INT AUTO_INCREMENT PRIMARY KEY,
+    idPais INT,
+    nombre VARCHAR (100) NOT NULL,
+    FOREIGN KEY (idPais) REFERENCES PAIS(idPais)
+);
 CREATE TABLE VIAJE (
     idViaje INT AUTO_INCREMENT PRIMARY KEY,
     idUsuario INT,
     fechaInicio DATE NOT NULL,
     fechaFin DATE NOT NULL,
-    nombre VARCHAR(50) NOT NULL,
+    nombre VARCHAR (100) NOT NULL,
     estado ENUM('Finalizado','En curso', 'Pendiente'),
+    idPais int NOT NULL,
+    FOREIGN KEY (idPais) REFERENCES PAIS(idPais),
     FOREIGN KEY (idUsuario) REFERENCES USUARIO(idUsuario)
 );
+
+
+
 
 CREATE TABLE ACTIVIDAD (
     idActividad INT AUTO_INCREMENT PRIMARY KEY,
@@ -56,19 +71,6 @@ CREATE TABLE ACTIVIDAD (
     coste DECIMAL(10,2) NULL,
     FOREIGN KEY (idViaje) REFERENCES VIAJE(idViaje)
 );
-
-CREATE TABLE PAIS (
-    idPais INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR (100)
-);
-
-CREATE TABLE CIUDAD (
-    idCiudad INT AUTO_INCREMENT PRIMARY KEY,
-    idPais INT,
-    nombre VARCHAR (100) NOT NULL,
-    FOREIGN KEY (idPais) REFERENCES PAIS(idPais)
-);
-
 CREATE TABLE GRUPO_VIAJE (
     idViaje INT,
     idUsuario INT,

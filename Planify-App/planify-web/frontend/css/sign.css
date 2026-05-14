@@ -71,12 +71,12 @@ main {
 }
 
 .right-container label {
-    font-size: 1.2em; /* Bajamos un pelín el tamaño para que sea más elegante */
+    font-size: 1.2em; 
     text-align: left;
-    display: block;   /* ¡ESTA ES LA CLAVE! Al ser block, ocupa toda la línea */
+    display: block;   
     width: 100%;
     font-weight: bold;
-    color: #444;      /* Un gris oscuro queda mejor que negro puro */
+    color: #444;    
 }
 
 .right-container input {

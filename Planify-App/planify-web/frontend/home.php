@@ -50,7 +50,7 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
             <a href="./landing.html">Landing</a>
           </div>
           <div class="buttons-nav">
-            <button class="but-login" id="user"><a href=""><?php echo $user['nombre']; ?></a></button>
+            <button class="but-login" id="user"><a href="./account.php"><?php echo $user['nombre']; ?></a></button>
             <button class="but-login logout">
               <a href="../backend/logout.php" style="text-decoration: none; color: inherit;">Log out</a>
             </button>
@@ -81,6 +81,10 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
               <input type="text" id="nombre_viaje" name="nombre_viaje" placeholder="Verano en Japón" required>
             </div>
             <div class="rellenar-viaje">
+              <label for="pais">País de destino</label>
+              <input type="text" id="pais" name="pais" placeholder="Japón" required>
+            </div>
+            <div class="rellenar-viaje">
               <label for="fecha_inicio">Fecha de inicio</label>
               <input type="date" id="fecha_inicio" name="fecha_inicio" required>
             </div>
@@ -107,7 +111,7 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
   </section>
 
   <section class="section-viajes">
-    <h2>Mis viajes</h2>
+    <h2>My plans</h2>
 
     <div class="contenedorViajes">
 
@@ -120,9 +124,11 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
           $ini    = $viaje['fechaInicio'];
           $fin    = $viaje['fechaFin'];
           $est    = $viaje['estado'];
+          $pai    = consulta("SELECT * FROM PAIS WHERE idPais = '$viaje[idPais]'");
         ?>
           <div class="tarjetaViaje">
             <h3><?= $nom ?></h3>
+            <h3><?= $pai['nombre'] ?></h3>
             <p>Desde: <?= $ini ?></p>
             <p>Hasta: <?= $fin ?></p>
             <p>Estado: <?= $est ?></p>
