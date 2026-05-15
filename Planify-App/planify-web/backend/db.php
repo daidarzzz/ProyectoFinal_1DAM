@@ -65,3 +65,22 @@ function redirigir($url) {
     header("Location: $url");
     exit();
 }
+function usoApi($pais) {
+    $accessKey = 'qKGa0OKFegyQJyBJRorZcArALDdiEvnfHDy7_9yyWKw';
+    $url = "https://api.unsplash.com/search/photos?query=" . urlencode($pais) . "&per_page=1&client_id=" . $accessKey;
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+    // Importante para APIs externas
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    $data = json_decode($response, true);
+
+    // Devolvemos la URL de la imagen pequeña (thumb) o regular
+    return $data['results'][0]['urls']['regular'] ?? 'https://via.placeholder.com/400x200?text=No+Image';
+}

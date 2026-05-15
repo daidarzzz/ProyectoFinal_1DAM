@@ -22,7 +22,7 @@
             $paisId = consulta("SELECT idPais FROM PAIS WHERE nombre = '$pais'");
         }
 
-        $idRealPais = $paisId['idPais'];
+        $idRealPais = $paisId['idPais'] ?? $paisId['idpais'];
 
         $sql = "INSERT INTO VIAJE (nombre, fechaInicio, fechaFin, estado, idUsuario, idPais) 
         VALUES ('$nombreViaje', '$fechaInicio', '$fechaFin', '$estado', $idUser, $idRealPais)";

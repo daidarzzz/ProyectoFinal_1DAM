@@ -1,0 +1,13 @@
+.datos_viaje{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.fechas{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}

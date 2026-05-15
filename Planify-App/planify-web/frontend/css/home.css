@@ -51,6 +51,7 @@ main h1 {
 @media (max-width: 1000px) {
     * {
         font-size: 1.3em;
+       
     }
     nav {
         font-size: 0.5em;
