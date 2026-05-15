@@ -23,6 +23,7 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
   <link rel="stylesheet" href="./css/home.css">
   <link rel="stylesheet" href="./css/viaje.css">
   <link rel="stylesheet" href="./css/popup.css">
+  <link rel="stylesheet" href="./css/buttons.css">
 
   <style>
     #user {
@@ -65,7 +66,7 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
       <h1>Welcome, <?php echo $user['nombre']; ?>!</h1>
       <p>You have successfully logged in to Planify.</p>
 
-      <button id="createPlanBut">Create plan</button>
+      <button class="buttonPro" id="createConfirm">Create plan</button>
 
       <section class="mainContainer">
         <div class="caja2">
@@ -102,8 +103,8 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
                 <option value="Pendiente">Pending</option>
               </select>
             </div>
-            <button type="submit" id="boton-crear-viaje">Create a trip</button>
-            <button type="reset" id="boton-cerrar">Close</button>
+            <button type="submit" class="buttonPro gradientBlue">Create a trip</button>
+            <button type="reset" id="closeCreate" class="buttonPro gray">Close</button>
 
           </form>
 
@@ -146,12 +147,11 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
   </main>
 
   <script>
-    const butAbrir = document.getElementById('createPlanBut')
+    const butAbrir = document.getElementById('createConfirm')
 
     const windowPlanContainer = document.querySelector('.mainContainer')
 
-    const butCerrar = document.getElementById('boton-cerrar')
-
+    const butCerrar = document.getElementById('closeCreate')
 
     butAbrir.onclick = function() {
       windowPlanContainer.style.display = "flex"

@@ -1,17 +1,4 @@
-#createPlanBut {
-    padding: 15px;
-    font-size: 1.2em;
-    border-radius: 10px;
-    background-color: #8599ff;
-    border-style: none;
-    font-weight: bolder;
-    color: white;
-    transition: 0.2s;
-}
-#createPlanBut:hover {
-    background-color: #506dff;
-    cursor: pointer;
-}
+
 
 #boton-crear-viaje {
     width: 95%;
