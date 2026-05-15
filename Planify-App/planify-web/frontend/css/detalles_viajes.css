@@ -11,3 +11,67 @@
     gap: 20px;
     align-items: center;
 }
+
+
+
+.formactividad {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    max-width: 350px; 
+    font-family: sans-serif;
+}
+
+.formactividad h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #ff396e; 
+    padding-bottom: 10px;
+}
+
+
+.formactividad div {
+    margin-bottom: 15px;
+}
+
+
+.formactividad label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+.formactividad input,textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; 
+    font-family: inherit;
+}
+
+
+.formactividad textarea {
+    resize: none; 
+}
+
+
+.formactividad button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff396e; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+   
+    transition: 0.3s;
+}
+
+.formactividad button:hover {
+    background-color: #e03262; 
+}

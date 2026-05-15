@@ -34,7 +34,7 @@ $foto = usoApi($pais['nombre']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/fonts.css">
-    <link rel="stylesheet" href="./css/popup.css">
+  
     <link rel="stylesheet" href="./css/buttons.css">
     <link rel="stylesheet" href="./css/detalles_viajes.css">
       <style>
@@ -88,7 +88,26 @@ $foto = usoApi($pais['nombre']);
     </section>
 
     <section class="formactividad">
-    
+
+    <form action="../backend/actividad.php" method="POST">
+        <div>
+        <label for="nombre_actividad">Name Activity</label>
+        <input type="text" name="nombre_viaje" id="nombre_viaje"  required>
+        </div>
+        <div>
+        <label for="fecha_inicio">Start date</label>
+        <input type="date" name="fecha_inicio" id="fecha_inicio" min="<?php echo $viaje['fechaInicio'] ?>" max="<?php echo $viaje['fechaFin'] ?>" required>
+        </div>
+        <div>
+        <label for="fecha_fin">End date</label>
+        <input type="date" name="fecha_fin" id="fecha_fin" min="<?php echo $viaje['fechaInicio'] ?>" max="<?php echo $viaje['fechaFin'] ?>" required>
+        </div>
+        <div>
+        <label for="descripcion">Description</label>
+        <textarea name="descripcion" id="descripcion" rows="4" required></textarea>
+        </div>
+        <button type="submit">Create Activity</button>
+    </form>
 
     </section>
 
