@@ -49,7 +49,7 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
           <div class="links">
             <a href="./home.php">Home</a>
             <a href="./communityPlans.php">Community plans</a>
-            <a href="./landing.html">Landing</a>
+            <a href="./landing.php">Landing</a>
           </div>
           <div class="buttons-nav">
             <button class="but-login" id="user"><a href="./account.php"><?php echo $user['nombre']; ?></a></button>

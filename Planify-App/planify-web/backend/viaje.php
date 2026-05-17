@@ -9,7 +9,15 @@
     $pais = $_POST['pais'];
     $idUser = sesion_get('idUsuario');
     $publico = intval($_POST['publico']);
+
     if($idUser) {
+
+        $f1 = new DateTime($fechaInicio);
+        $f2 = new DateTime($fechaFin);
+        if ($f1 > $f2) {
+            die("Error: La fecha de inicio no puede ser mayor que la fecha de fin.");
+        }
+
         $existe = consulta("SELECT nombre FROM VIAJE WHERE idUsuario = '$idUser' AND nombre = '$nombreViaje'");        
         if ($existe) {
             die("Error, ya existe un viaje con ese nombre.");
@@ -24,8 +32,6 @@
 
         $idRealPais = $paisId['idPais'] ?? $paisId['idpais'];
 
-        $f1 = new DateTime($fechaInicio);
-        $f2 = new DateTime($fechaFin);
         $diasTotales = $f1->diff($f2)->days + 1;
 
         $sql = "INSERT INTO VIAJE (nombre, fechaInicio, fechaFin, estado, idUsuario, idPais, dias, publico) 

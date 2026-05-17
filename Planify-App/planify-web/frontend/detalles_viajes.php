@@ -45,7 +45,16 @@ $actividades = consulta_lista("SELECT * FROM ACTIVIDAD WHERE idViaje = $idViaje 
   <link rel="stylesheet" href="./css/popup.css">
 
 </head>
+  <style>
+    #user {
+      background-color: #ff396e;
+    }
 
+    #user a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  </style>
 <body>
   <header>
     <nav>
@@ -56,7 +65,7 @@ $actividades = consulta_lista("SELECT * FROM ACTIVIDAD WHERE idViaje = $idViaje 
         <div class="links">
           <a href="./home.php">Home</a>
           <a href="./communityPlans.php">Community plans</a>
-          <a href="./landing.html">Landing</a>
+          <a href="./landing.php">Landing</a>
         </div>
         <div class="buttons-nav">
           <button class="but-login" id="user"><a href="./account.php"><?php echo $user['nombre']; ?></a></button>
@@ -193,7 +202,7 @@ $actividades = consulta_lista("SELECT * FROM ACTIVIDAD WHERE idViaje = $idViaje 
                       $hayPlanes = true;
                       ?>
                       <div class="actividad-item">
-                        <p><strong><?= $act['hora'] ?></strong>: <?= $act['nombre'] ?></p>
+                        <p><strong class="hora"><?= $act['hora'] ?></strong>: <?= $act['nombre'] ?></p>
                         <p><?= $act['descripcion'] ?></p>
                         <?= ($act['coste'] > 0) ? "<p>Cost: €" . number_format($act['coste'], 2) . "</p>" : "" ?>
                       </div>

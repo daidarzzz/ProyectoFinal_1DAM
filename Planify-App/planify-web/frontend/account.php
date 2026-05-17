@@ -39,7 +39,7 @@ $user = consulta("SELECT * FROM USUARIO WHERE idUsuario = '$id'");
                 <div class="links">
                     <a href="./home.php">Home</a>
                     <a href="./communityPlans.php">Community plans</a>
-                    <a href="./landing.html">Landing</a>
+                    <a href="./landing.php">Landing</a>
                 </div>
                 <div class="buttons-nav">
                     <button class="but-login" id="user"><a href=""><?php echo $user['nombre']; ?></a></button>
@@ -58,8 +58,8 @@ $user = consulta("SELECT * FROM USUARIO WHERE idUsuario = '$id'");
 
             <h1>Account details</h1>
 
-            <div><b>Username:</b> <?php echo $user['nombre']; ?></div>
-            <div><b>Email:</b> <?php echo $user['email']; ?></div>
+            <div><b class="negrita">Username:</b> <?php echo $user['nombre']; ?></div>
+            <div><b class="negrita">Email:</b> <?php echo $user['email']; ?></div>
             <button class="detailsChange">Change password</button>
 
         </section>

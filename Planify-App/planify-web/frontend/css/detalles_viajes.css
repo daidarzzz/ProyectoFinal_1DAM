@@ -1,206 +1,283 @@
-#user {
-  background-color: #ff396e;
+body {
+    background-color: #f5f7fb;
+    font-family: Arial, sans-serif;
+    color: #1e1e1e;
+    margin: 0;
+    padding: 0;
 }
 
-#user a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.datos_viaje{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-.fechas{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
-}
 
 main {
     display: flex;
-    flex-direction: row;
-
+    gap: 25px;
+    padding: 25px;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.panel-lateral {
-    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
-    border-radius: 25px;
-    width: 25%;
-    margin: 30px;
-    padding: 20px;
-    height: 70vh;
 
+.panel-lateral {
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    width: 320px;
+    padding: 25px;
+    border: 1px solid #ededed;
 }
 
 .panel-lateral h2 {
-    font-size: 2.7rem;
-    margin-bottom: 10px;
-    color: #1e1e1e;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: #222;
 }
-#createActivityTitle {
-    font-size: 2.7rem;
-    margin-bottom: 10px;
-    color: #1e1e1e;
-    margin-bottom: -25px;
-}
+
 .paisTitle {
-    font-size: 2rem;
+    font-size: 1rem;
     color: #ff396e;
     font-weight: bold;
+    display: inline-block;
     margin-bottom: 20px;
 }
+
 .infoContenedor {
-    padding: 15px;
-    border-radius: 12px;
-    width: 90%;
-    font-size: 1.4em;
-    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
+
 .infoContenedor p {
-    background-color: #ff507fc4;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    color: white;
-    border-radius: 40px;
-    margin-bottom: 10px;
-}
-.gray2 {
-    margin-top: 15px;
-    font-size: 1em;
-    padding: 10px;
+    background: #f8f9fc;
+    border: 1px solid #ececec;
+    padding: 12px 15px;
+    border-radius: 12px;
+    margin: 0;
+    color: #444;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
 }
 
-/*
-    <div class="panel-lateral">
-      <h2><?php echo $viaje['nombre'] ?></h2>
-      <span class="paisTitle"><?php echo $pais['nombre'] ?></span>
+.infoContenedor strong {
+    color: #777;
+    font-weight: normal;
+}
 
-      <div class="infoContenedor">
-        <p><strong>Start:</strong> <?php echo $viaje['fechaInicio'] ?></p>
-        <p><strong>End:</strong> <?php echo $viaje['fechaFin'] ?></p>
-        <p><strong>Duration:</strong> <?php echo $viaje['dias'] ?> days</p>
-        <p><strong>Status:</strong> <?php echo $viaje['estado'] ?></p>
-      </div>
-    </div>
-<div class="crearActividad">
-      <?php if ($esPropietario): ?>
-
-        <section class="formactividad">
-          <form action="../backend/actividad.php" method="POST">
-            <input type="hidden" name="id_viaje" value="<?php echo $idViaje; ?>">
-
-            <div>
-              <label for="nombre_viaje">Name Activity</label>
-              <input type="text" name="nombre_viaje" id="nombre_viaje" required>
-            </div>
-            <div>
-              <label for="dia_viaje">Day Number</label>
-              <input type="number" name="dia_viaje" id="dia_viaje" min="1" max="<?php echo $viaje['dias']; ?>"
-                placeholder="1" required>
-            </div>
-            <div>
-              <label for="hora_actividad">Time</label>
-              <input type="time" name="hora_actividad" id="hora_actividad" required>
-            </div>
-            <div>
-              <label for="coste">Cost (€)</label>
-              <input type="number" step="0.01" name="coste" id="coste" placeholder="0.00">
-            </div>
-            <div>
-              <label for="descripcion">Description</label>
-              <textarea name="descripcion" id="descripcion" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="buttonPro">Create Activity</button>
-          </form>
-        </section>
-
-      <?php endif; ?>
-    </div>
-*/
 
 .crearActividad {
-    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
-    border-radius: 25px;
-    width: 25%;
-    margin: 30px;
-    padding: 20px;
-    height: 70vh;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    width: 340px;
+    padding: 25px;
+    border: 1px solid #ededed;
 }
 
-.formactividad {
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 350px; 
-    width: 90%;
-    margin: 0 auto;
-    font-family: sans-serif;
+#createActivityTitle {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #222;
 }
-.formactividad h3 {
-    margin-top: 0;
-    color: #333;
-    font-size: 1.2rem;
-    border-bottom: 2px solid #ff396e; 
-    padding-bottom: 10px;
+
+.formactividad form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
+
 .formactividad label {
     display: block;
-    margin-top: 15px;
+    margin-bottom: 5px;
     font-weight: bold;
-    color: #555;
-}
-.formactividad input, .formactividad textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1em;
-}
-.formactividad button {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background-color: #ff396e;
-}
-.formactividad button:hover {
-    background-color: #e63665;
-    cursor: pointer;
-}
-.itinerario {
-    max-width: 600px;
-    margin: 20px;
+    color: #444;
+    font-size: 0.9rem;
 }
 
+.formactividad input,
+.formactividad textarea,
+.formactividad select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    background-color: #fafafa;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.formactividad input:focus,
+.formactividad textarea:focus,
+.formactividad select:focus {
+    border-color: #ff396e;
+    background-color: #ffffff;
+}
+
+.formactividad textarea {
+    resize: none;
+}
+
+.buttonPro, .formactividad button {
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.formactividad button, .buttonPro {
+    background: #ff396e;
+    color: white;
+}
+
+.formactividad button:hover, .buttonPro:hover {
+    background: #e22d5f;
+}
+
+.gray2 {
+    background: #f1f3f7;
+    color: #1e1e1e;
+    margin-top: 5px;
+}
+
+.gray2:hover {
+    background: #e4e7eb;
+}
+
+.buttonPro.gray {
+    background: #ffe3eb;
+    color: #ff396e;
+}
+
+.buttonPro.gray:hover {
+    background: #ffd0dd;
+}
+
+.gradientBlue {
+    background: #3b82f6;
+    color: white;
+    width: 100%;
+}
+
+.gradientBlue:hover {
+    background: #2563eb;
+}
+
+
+.contenido-principal {
+    flex: 1;
+}
+
+.itinerario {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
 .dia-caja {
-    background-color: #f4f4f4;
-    margin-bottom: 20px;       
-    padding: 15px;             
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    border: 1px solid #efefef;
 }
 
 .dia-caja h2 {
-    margin: 0 0 10px 0;
+    margin: 0 0 20px;
     font-size: 1.2rem;
-    color: #000000;
+    color: #222;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f5f7fb;
 }
 
+
 .actividades-lista {
-    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    padding-left: 20px;
 }
 
 .actividad-item {
-    margin-bottom: 10px; 
-    background-color: #ffffff; 
-    padding: 10px;
+    background: #f8f9fc;
+    border-left: 4px solid #ff396e;
+    border-radius: 12px;
+    padding: 15px;
+    position: relative;
 }
 
 .actividad-item p {
-    margin: 0;
-    font-size: 1rem;
+    margin: 5px 0;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
+
+
+.actividad-item .hora{
+    color: #ff396e;
+    background: #ffebee;
+    padding: 2px 6px;
+    border-radius: 6px;
+
+}
+
+
+.mainContainer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.caja2 {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.caja2 h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.caja2 p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.caja2 form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rellenar label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+.rellenar input,
+.rellenar select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    box-sizing: border-box;
+}
+

@@ -1,3 +1,18 @@
+<?php
+session_start();
+include '../backend/db.php';
+
+$id = sesion_get('idUsuario');
+
+if (!$id) {
+  redirigir("login.php");
+}
+
+$user = consulta("SELECT * FROM USUARIO WHERE idUsuario = '$id'");
+$viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY fechaInicio ASC");
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -7,27 +22,45 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/landing.css" />
   <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/buttons.css">
+
+  <style>
+    #user {
+      background-color: #ff396e;
+    }
+
+    #user a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  </style>
+
 </head>
 
 <body>
-  <header>
-    <nav>
-      <div class="logo">
-        <h3>PLANIFY</h3>
-      </div>
-      <div class="links-buttons">
-        <div class="links">
-          <a href="./home.php">Home</a>
-                    <a href="./communityPlans.php">Community plans</a>
-          <a href="./landing.html">Landing</a>
+  <section class="fondo_imagen">
+    <header>
+      <nav>
+        <div class="logo">
+          <h3>PLANIFY</h3>
         </div>
-        <div class="buttons-nav">
-          <button class="but-login"><a href="./login.php">Log in</a></button>
-          <button class="but-signup"><a href="./register.html">Sign up</a></button>
+        <div class="links-buttons">
+          <div class="links">
+            <a href="./home.php">Home</a>
+            <a href="./communityPlans.php">Community plans</a>
+            <a href="./landing.html">Landing</a>
+          </div>
+          <div class="buttons-nav">
+            <button class="but-login" id="user"><a href="./account.php"><?php echo $user['nombre']; ?></a></button>
+            <button class="but-login logout">
+              <a href="../backend/logout.php" style="text-decoration: none; color: inherit;">Log out</a>
+            </button>
+
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
+
   <main>
     <div class="tituloPrincipal">
       <br />
@@ -47,28 +80,27 @@
 
     <section class="como-funciona">
 
-      <h2>¿Cómo funciona?</h2>
+      <h2>How does it work?</h2>
       <div class="circulos">
         <div class="crear-viaje secFunciona">
           <div class="circulo">1</div>
-          <h3>Crea tu viaje</h3>
-          <p>Define destino y fechas de tu próxima escapada.</p>
+          <h3>Create your trip</h3>
+          <p>Define the destination and dates for your next getaway.</p>
         </div>
         <div class="anyadir-actividades secFunciona">
           <div class="circulo">2</div>
-          <h3>Añade actividades</h3>
-          <p>Busca museos, restaurantes y puntos de interés.</p>
-
+          <h3>Add activities</h3>
+          <p>Search for museums, restaurants, and points of interest.</p>
         </div>
         <div class="organizar-timeline secFunciona">
           <div class="circulo">3</div>
-          <h3>Organiza en tu TimeLine</h3>
-          <p>Arrastra tus planes al día que lo realizarás.</p>
+          <h3>Organize on your TimeLine</h3>
+          <p>Drag your plans to the day you will do them.</p>
         </div>
         <div class="comparte secFunciona">
           <div class="circulo">4</div>
-          <h3>Comparte o publica</h3>
-          <p>Comparte tus planes con tus amigos e inspira a los demás.</p>
+          <h3>Share or publish</h3>
+          <p>Share your plans with your friends and inspire others.</p>
         </div>
       </div>
 
@@ -76,24 +108,24 @@
 
 
     <section class="community-plans">
-      <div>
-        <h2 class="title-community">Inspírate con viajes reales</h2>
+     <div>
+        <h2 class="title-community">Get inspired by real trips</h2>
         <p class="community-plans-content">
-          Descubre las rutas realizadas por nuestra comunidad y añadelas a tus
-          planes.
+          Discover the routes taken by our community and add them to your
+          plans.
         </p>
         <div class="photo-community">
           <div class="tokio caja-community">
-            <h4>Japón</h4>
-            <p>7 días en Tokio</p>
+            <h4>Japan</h4>
+            <p>7 days in Tokyo</p>
           </div>
           <div class="roma caja-community">
-            <h4>Italia</h4>
-            <p>Escapada a roma</p>
+            <h4>Italy</h4>
+            <p>Getaway to Rome</p>
           </div>
           <div class="paris caja-community">
-            <h4>Francia</h4>
-            <p>París romántico</p>
+            <h4>France</h4>
+            <p>Romantic Paris</p>
           </div>
         </div>
       </div>
@@ -103,17 +135,16 @@
     <section class="ads">
       <div class="ads-todo">
         <div class="title-ads">
-          <h2>Impulsa tu negocio con Planify</h2>
+          <h2>Boost your business with Planify</h2>
         </div>
         <div class="content-ads">
-          Consigue atraer a tu negocio a miles de clientes que buscan
-          experiencias únicas. Registrate en <b>Planify</b>, publica tu
-          negocio en Planify y crea actividades personalizadas para hacerte
-          conocer a los clientes.
+          Attract thousands of customers looking for unique experiences to your 
+          business. Sign up on <b>Planify</b>, publish your business on Planify, 
+          and create customized activities to get noticed by customers.
         </div>
         <div class="button-ads">
           <button class="but-ads">
-            <span>Convertirse en anunciante</span>
+            <span>Become an advertiser</span>
           </button>
         </div>
       </div>
@@ -140,50 +171,50 @@
       </div>
     </section>
 
-    <section class="price-clientes">
+<section class="price-clientes">
     <div>
-        <h2>Plan para cada viajero</h2>
-        <p>Precios</p>
+        <h2>A plan for every traveler</h2>
+        <p>Pricing</p>
 
         <div class="planes">
       
             <div class="client-free caja">
-                <h2>Plan gratuito</h2>
-                <h1 class="precio">0€ <span class="mes">/mes</span></h1>
+                <h2>Free plan</h2>
+                <h1 class="precio">0€ <span class="mes">/month</span></h1>
                 <ul class="beneficios-lista">
-                    <li>✅ 3 Viajes activos</li>
-                    <li>✅ Comunidad básica</li>
+                    <li>✅ 3 Active trips</li>
+                    <li>✅ Basic community</li>
                 </ul>
                 <div class="ultimo">
-                    <button class="but-prices">Empieza gratis</button>
+                    <button class="but-prices">Start for free</button>
                 </div>
             </div>
 
        
             <div id="premium" class="client-premium caja">
       
-                <h2>Plan premium</h2>
-                <h1 class="precio">9€ <span class="mes">/mes</span></h1>
+                <h2>Premium plan</h2>
+                <h1 class="precio">9€ <span class="mes">/month</span></h1>
                 <ul class="beneficios-lista">
-                    <li>✅ Viajes ilimitados</li>
-                    <li>✅ Sin anuncios</li>
-                    <li>✅ Mapas Offline</li>
+                    <li>✅ Unlimited trips</li>
+                    <li>✅ No ads</li>
+                    <li>✅ Offline maps</li>
                 </ul>
                 <div class="ultimo">
-                    <button class="but-prices">Probar Premium</button>
+                    <button class="but-prices">Try Premium</button>
                 </div>
             </div>
 
          
             <div class="client-anunciant caja">
-                <h2>Plan anunciante</h2>
+                <h2>Advertiser plan</h2>
                 <h1 class="precio" style="font-size: 2.5em !important;">Business</h1>
                 <ul class="beneficios-lista">
-                    <li>✅ Publicita tu local</li>
-                    <li>✅ Estadísticas pro</li>
+                    <li>✅ Advertise your business</li>
+                    <li>✅ Pro statistics</li>
                 </ul>
                 <div class="ultimo">
-                    <button class="but-prices">Contáctanos</button>
+                    <button class="but-prices">Contact us</button>
                 </div>
             </div>
         </div>
@@ -192,11 +223,11 @@
 
     <section class="join-us">
       <div>
-        <h2>Empieza a planificar tu viaje ahora</h2>
+        <h2>Start planning your trip now</h2>
         <div>
-          <button class="join-us-button"><span>Comenzar gratis</span></button>
+          <button class="join-us-button"><span>Start for free</span></button>
         </div>
-        <p class="join-p">Únete a más de 50.000 viajeros integrantes</p>
+        <p class="join-p">Join over 50,000 fellow travelers</p>
       </div>
     </section>
   </main>
