@@ -9,13 +9,12 @@ if (!$id) {
 }
 
 $user = consulta("SELECT * FROM USUARIO WHERE idUsuario = '$id'");
-$viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario != '$id' ORDER BY fechaInicio ASC");
-
+$viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario != '$id' AND publico = 1 ORDER BY fechaInicio ASC");
 ?>
 
 
 <!DOCTYPE html>
-<html lan/* Ajustado para que quepan 3 */g="en">
+<html>
 
 <head>
   <meta charset="UTF-8">

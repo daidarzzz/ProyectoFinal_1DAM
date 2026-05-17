@@ -8,7 +8,7 @@
     $estado = $_POST['estado'];
     $pais = $_POST['pais'];
     $idUser = sesion_get('idUsuario');
-
+    $publico = intval($_POST['publico']);
     if($idUser) {
         $existe = consulta("SELECT nombre FROM VIAJE WHERE idUsuario = '$idUser' AND nombre = '$nombreViaje'");        
         if ($existe) {
@@ -28,8 +28,8 @@
         $f2 = new DateTime($fechaFin);
         $diasTotales = $f1->diff($f2)->days + 1;
 
-        $sql = "INSERT INTO VIAJE (nombre, fechaInicio, fechaFin, estado, idUsuario, idPais, dias) 
-        VALUES ('$nombreViaje', '$fechaInicio', '$fechaFin', '$estado', $idUser, $idRealPais, $diasTotales)";
+        $sql = "INSERT INTO VIAJE (nombre, fechaInicio, fechaFin, estado, idUsuario, idPais, dias, publico) 
+    VALUES ('$nombreViaje', '$fechaInicio', '$fechaFin', '$estado', $idUser, $idRealPais, $diasTotales, $publico)";
         
         if(ejecutar($sql)) {
             redirigir("../frontend/home.php");

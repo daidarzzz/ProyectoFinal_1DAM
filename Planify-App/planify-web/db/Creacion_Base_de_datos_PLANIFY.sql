@@ -54,6 +54,7 @@ CREATE TABLE VIAJE (
     dias int NOT NULL,
     nombre VARCHAR (100) NOT NULL,
     estado ENUM('Finalizado','En curso', 'Pendiente'),
+    publico BOOLEAN NOT NULL,
     idPais int NOT NULL,
     FOREIGN KEY (idPais) REFERENCES PAIS(idPais),
     FOREIGN KEY (idUsuario) REFERENCES USUARIO(idUsuario)

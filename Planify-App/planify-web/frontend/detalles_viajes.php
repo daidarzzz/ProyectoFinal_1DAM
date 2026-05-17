@@ -78,6 +78,7 @@ $actividades = consulta_lista("SELECT * FROM ACTIVIDAD WHERE idViaje = $idViaje 
         <p><strong>End:</strong> <?php echo $viaje['fechaFin'] ?></p>
         <p><strong>Duration:</strong> <?php echo $viaje['dias'] ?> days</p>
         <p><strong>Status:</strong> <?php echo $viaje['estado'] ?></p>
+        <p><strong>Privacy:</strong> <?php echo ($viaje['publico'] == 1) ? 'Public' : 'Private'; ?></p>
 
         <?php if ($esPropietario): ?>
           <a id="changeBut" class="buttonPro gray2" style="text-decoration: none;">
@@ -120,6 +121,13 @@ $actividades = consulta_lista("SELECT * FROM ACTIVIDAD WHERE idViaje = $idViaje 
                 <option value="En curso" <?php echo ($viaje['estado'] == 'En curso') ? 'selected' : ''; ?>>En curso</option>
                 <option value="Finalizado" <?php echo ($viaje['estado'] == 'Finalizado') ? 'selected' : ''; ?>>Finalizado
                 </option>
+              </select>
+            </div>
+            <div class="rellenar">
+              <label for="publico_viaje">Privacy</label>
+              <select id="publico_viaje" name="publico_viaje" required>
+                <option value="1" <?php echo ($viaje['publico'] == 1) ? 'selected' : ''; ?>>Public</option>
+                <option value="0" <?php echo ($viaje['publico'] == 0) ? 'selected' : ''; ?>>Private</option>
               </select>
             </div>
 
@@ -165,7 +173,45 @@ $actividades = consulta_lista("SELECT * FROM ACTIVIDAD WHERE idViaje = $idViaje 
       </div>
     <?php endif; ?>
 
-   
+   <div class="contenido-principal">
+
+      <div class="itinerario">
+        <?php 
+        for ($i = 1; $i <= $viaje['dias']; $i++): 
+            $fechaDia = date('d M', strtotime($viaje['fechaInicio'] . " + " . ($i - 1) . " days"));
+        ?>
+          
+          <div class="dia-caja">
+            
+            <h2>Día <?= $i ?> - <?= $fechaDia ?></h2>
+            
+            <div class="actividades-lista">
+              <?php 
+              $hayPlanes = false;
+              foreach ($actividades as $act) {
+                  if ($act['dia'] == $i) {
+                      $hayPlanes = true;
+                      ?>
+                      <div class="actividad-item">
+                        <p><strong><?= $act['hora'] ?></strong>: <?= $act['nombre'] ?></p>
+                        <p><?= $act['descripcion'] ?></p>
+                        <?= ($act['coste'] > 0) ? "<p>Cost: €" . number_format($act['coste'], 2) . "</p>" : "" ?>
+                      </div>
+                      <?php
+                  }
+              }
+              if (!$hayPlanes) {
+                  echo '<p>No hay planes.</p>';
+              }
+              ?>
+            </div>
+
+          </div>
+
+        <?php endfor; ?>
+      </div>
+
+    </div>
 
 
   </main>

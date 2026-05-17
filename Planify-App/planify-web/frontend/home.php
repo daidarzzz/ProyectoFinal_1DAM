@@ -103,6 +103,13 @@ $viajes = consulta_lista("SELECT * FROM VIAJE WHERE idUsuario = '$id' ORDER BY f
                 <option value="Pendiente">Pending</option>
               </select>
             </div>
+            <div class="rellenar">
+              <label for="publico">Privacy</label>
+              <select id="publico" name="publico" required>
+                <option value="1">Public (Visible to community)</option>
+                <option value="0" selected>Private (Only me)</option>
+              </select>
+            </div>
             <button type="submit" class="buttonPro gradientBlue">Create a trip</button>
             <button type="reset" id="closeCreate" class="buttonPro gray">Close</button>
 
