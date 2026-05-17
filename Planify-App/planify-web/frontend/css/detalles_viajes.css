@@ -1,3 +1,12 @@
+#user {
+  background-color: #ff396e;
+}
+
+#user a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .datos_viaje{
     display: flex;
     justify-content: center;
@@ -12,17 +21,125 @@
     align-items: center;
 }
 
+main {
+    display: flex;
+    flex-direction: row;
 
-
-.formactividad {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    max-width: 350px; 
-    font-family: sans-serif;
 }
 
+.panel-lateral {
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    width: 25%;
+    margin: 30px;
+    padding: 20px;
+    height: 70vh;
+
+}
+
+.panel-lateral h2 {
+    font-size: 2.7rem;
+    margin-bottom: 10px;
+    color: #1e1e1e;
+}
+#createActivityTitle {
+    font-size: 2.7rem;
+    margin-bottom: 10px;
+    color: #1e1e1e;
+    margin-bottom: -25px;
+}
+.paisTitle {
+    font-size: 2rem;
+    color: #ff396e;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.infoContenedor {
+    padding: 15px;
+    border-radius: 12px;
+    width: 90%;
+    font-size: 1.4em;
+    font-family: sans-serif;
+}
+.infoContenedor p {
+    background-color: #ff507fc4;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    color: white;
+    border-radius: 40px;
+    margin-bottom: 10px;
+}
+.gray2 {
+    margin-top: 15px;
+    font-size: 1em;
+    padding: 10px;
+}
+
+/*
+    <div class="panel-lateral">
+      <h2><?php echo $viaje['nombre'] ?></h2>
+      <span class="paisTitle"><?php echo $pais['nombre'] ?></span>
+
+      <div class="infoContenedor">
+        <p><strong>Start:</strong> <?php echo $viaje['fechaInicio'] ?></p>
+        <p><strong>End:</strong> <?php echo $viaje['fechaFin'] ?></p>
+        <p><strong>Duration:</strong> <?php echo $viaje['dias'] ?> days</p>
+        <p><strong>Status:</strong> <?php echo $viaje['estado'] ?></p>
+      </div>
+    </div>
+<div class="crearActividad">
+      <?php if ($esPropietario): ?>
+
+        <section class="formactividad">
+          <form action="../backend/actividad.php" method="POST">
+            <input type="hidden" name="id_viaje" value="<?php echo $idViaje; ?>">
+
+            <div>
+              <label for="nombre_viaje">Name Activity</label>
+              <input type="text" name="nombre_viaje" id="nombre_viaje" required>
+            </div>
+            <div>
+              <label for="dia_viaje">Day Number</label>
+              <input type="number" name="dia_viaje" id="dia_viaje" min="1" max="<?php echo $viaje['dias']; ?>"
+                placeholder="1" required>
+            </div>
+            <div>
+              <label for="hora_actividad">Time</label>
+              <input type="time" name="hora_actividad" id="hora_actividad" required>
+            </div>
+            <div>
+              <label for="coste">Cost (€)</label>
+              <input type="number" step="0.01" name="coste" id="coste" placeholder="0.00">
+            </div>
+            <div>
+              <label for="descripcion">Description</label>
+              <textarea name="descripcion" id="descripcion" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="buttonPro">Create Activity</button>
+          </form>
+        </section>
+
+      <?php endif; ?>
+    </div>
+*/
+
+.crearActividad {
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    width: 25%;
+    margin: 30px;
+    padding: 20px;
+    height: 70vh;
+}
+
+.formactividad {
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 350px; 
+    width: 90%;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
 .formactividad h3 {
     margin-top: 0;
     color: #333;
@@ -30,48 +147,29 @@
     border-bottom: 2px solid #ff396e; 
     padding-bottom: 10px;
 }
-
-
-.formactividad div {
-    margin-bottom: 15px;
-}
-
-
 .formactividad label {
     display: block;
-    margin-bottom: 5px;
+    margin-top: 15px;
     font-weight: bold;
-    font-size: 0.9rem;
     color: #555;
 }
-
-
-.formactividad input,textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box; 
-    font-family: inherit;
-}
-
-
-.formactividad textarea {
-    resize: none; 
-}
-
-
-.formactividad button {
+.formactividad input, .formactividad textarea {
     width: 100%;
     padding: 10px;
-    background-color: #ff396e; 
-    color: white;
-    border: none;
-    border-radius: 6px;
-   
-    transition: 0.3s;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
 }
-
+.formactividad button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff396e;
+}
 .formactividad button:hover {
-    background-color: #e03262; 
+    background-color: #e63665;
+    cursor: pointer;
 }

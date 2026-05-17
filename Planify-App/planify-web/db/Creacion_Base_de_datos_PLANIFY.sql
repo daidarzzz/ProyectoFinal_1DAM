@@ -51,6 +51,7 @@ CREATE TABLE VIAJE (
     idUsuario INT,
     fechaInicio DATE NOT NULL,
     fechaFin DATE NOT NULL,
+    dias int NOT NULL,
     nombre VARCHAR (100) NOT NULL,
     estado ENUM('Finalizado','En curso', 'Pendiente'),
     idPais int NOT NULL,
@@ -64,8 +65,8 @@ CREATE TABLE VIAJE (
 CREATE TABLE ACTIVIDAD (
     idActividad INT AUTO_INCREMENT PRIMARY KEY,
     idViaje INT,
-    inicio DATE NOT NULL,
-    fin DATE NULL,
+    dia INT,
+    hora TIME,
     nombre VARCHAR (100) NOT NULL,
     descripcion VARCHAR (300) NULL,
     coste DECIMAL(10,2) NULL,

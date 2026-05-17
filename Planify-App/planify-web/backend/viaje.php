@@ -24,8 +24,12 @@
 
         $idRealPais = $paisId['idPais'] ?? $paisId['idpais'];
 
-        $sql = "INSERT INTO VIAJE (nombre, fechaInicio, fechaFin, estado, idUsuario, idPais) 
-        VALUES ('$nombreViaje', '$fechaInicio', '$fechaFin', '$estado', $idUser, $idRealPais)";
+        $f1 = new DateTime($fechaInicio);
+        $f2 = new DateTime($fechaFin);
+        $diasTotales = $f1->diff($f2)->days + 1;
+
+        $sql = "INSERT INTO VIAJE (nombre, fechaInicio, fechaFin, estado, idUsuario, idPais, dias) 
+        VALUES ('$nombreViaje', '$fechaInicio', '$fechaFin', '$estado', $idUser, $idRealPais, $diasTotales)";
         
         if(ejecutar($sql)) {
             redirigir("../frontend/home.php");

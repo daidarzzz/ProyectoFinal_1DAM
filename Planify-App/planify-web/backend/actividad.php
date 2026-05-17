@@ -1,13 +1,16 @@
-<?php 
-    session_start();
-     include 'db.php';
+<?php
+session_start();
+include 'db.php';
 
-     nombre_actividad = $_POST['nombre_viaje']
+$idViaje   = intval($_POST['id_viaje']);
+$nombre    = $_POST['nombre_viaje'];
+$dia       = intval($_POST['dia_viaje']);
+$hora      = $_POST['hora_actividad'];
+$desc      = $_POST['descripcion'];
+$coste     = !empty($_POST['coste']) ? floatval($_POST['coste']) : "NULL";
 
-     fecha_inicio = $_POST['fecha_inicio']
+ejecutar("INSERT INTO ACTIVIDAD (idViaje, dia, hora, nombre, descripcion, coste) 
+          VALUES ($idViaje, $dia, '$hora', '$nombre', '$desc', $coste)");
 
-     descripcion = $_POST['descripcion']
-
-     fecha_fin = $_POST['fecha_fin']
-
+redirigir("../frontend/detalles_viajes.php?id=" . $idViaje);
 ?>
