@@ -13,9 +13,9 @@ public class Datos_Usuario {
     public static Connection conexion(){
 
         Connection conexion;
-        String host = "jdbc:mariadb://localhost:3310/"; // Por definir
+        String host = "jdbc:mariadb://localhost:3306/";
         String user = "root";
-        String psw = "";
+        String psw = "root";
         String bd = "PLANIFY";
         System.out.println("Conectando...");
 
@@ -65,7 +65,7 @@ public class Datos_Usuario {
 
                 int id = respuesta.getInt("idusuario");
                 String nombre = respuesta.getString("nombre");
-                String contrasena = respuesta.getString("contraseña");
+                String contrasena = respuesta.getString("contrasenia");
                 String email = respuesta.getString("email");
                 listaUsuarios.add(new Usuario(nombre,id,contrasena,email));
 
@@ -113,7 +113,7 @@ public class Datos_Usuario {
 
         System.out.println("Modificando...");
 
-        String query = "Update USUARIO SET nombre = '" + usuario.getNombre() + "', " + "contraseña = '" +
+        String query = "Update USUARIO SET nombre = '" + usuario.getNombre() + "', " + "contrasenia = '" +
                 usuario.getContrasena() + "', " + "email = '" + usuario.getEmail()
                 + "' WHERE idusuario = '" + usuario.getId() + "'";
 
@@ -139,7 +139,7 @@ public class Datos_Usuario {
 
         System.out.println("Insertando...");
 
-        String query = "Insert into USUARIO (nombre,contraseña,email) VALUES ('" + usuario.getNombre() + "', " +
+        String query = "Insert into USUARIO (nombre,contrasenia,email) VALUES ('" + usuario.getNombre() + "', " +
                 "'" + usuario.getContrasena() + "', " + " '" +
                 usuario.getEmail() + "')";
 

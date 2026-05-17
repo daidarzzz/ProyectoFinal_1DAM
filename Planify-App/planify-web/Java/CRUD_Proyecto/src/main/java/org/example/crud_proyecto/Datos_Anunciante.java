@@ -15,9 +15,9 @@ public class Datos_Anunciante {
     public static Connection conexion(){
 
             Connection conexion;
-            String host = "jdbc:mariadb://localhost:3310/";
+            String host = "jdbc:mariadb://localhost:3306/";
             String user = "root";
-            String psw = "";
+            String psw = "root";
             String bd = "PLANIFY";
             System.out.println("Conectando...");
 
@@ -54,7 +54,7 @@ public class Datos_Anunciante {
 
             ObservableList<Anunciante> listaAnunciantes = FXCollections.observableArrayList();
 
-            String query = "SELECT u.idusuario, u.nombre, u.contraseña, u.email, a.empresa, a.presupuesto " +
+            String query = "SELECT u.idusuario, u.nombre, u.contrasenia, u.email, a.empresa, a.presupuesto " +
                     "from USUARIO u inner join ANUNCIANTE a on u.idusuario = a.idusuario";
 
             Statement statement;
@@ -68,7 +68,7 @@ public class Datos_Anunciante {
 
                     int id = respuesta.getInt("idusuario");
                     String nombre = respuesta.getString("nombre");
-                    String contrasena = respuesta.getString("contraseña");
+                    String contrasena = respuesta.getString("contrasenia");
                     String email = respuesta.getString("email");
                     String empresa = respuesta.getString("empresa");
                     double presupuesto = respuesta.getDouble("presupuesto");
@@ -116,7 +116,7 @@ public class Datos_Anunciante {
             System.out.println("Modificando...");
 
             String queryUsuario = "UPDATE USUARIO SET nombre = '" + anunciante.getNombre() + "', "
-                    + "contraseña = '" + anunciante.getContrasena() + "', email = '" + anunciante.getEmail() + "' "
+                    + "contrasenia = '" + anunciante.getContrasena() + "', email = '" + anunciante.getEmail() + "' "
                     + "WHERE idUsuario = " + anunciante.getId();
 
             String queryAnunciante = "UPDATE ANUNCIANTE SET empresa = '" + anunciante.getEmpresa() + "', "
@@ -145,7 +145,7 @@ public class Datos_Anunciante {
 
             System.out.println("Insertando...");
 
-            String query = "Insert into USUARIO (nombre,contraseña,email) VALUES ('" + anunciante.getNombre() + "', " +
+            String query = "Insert into USUARIO (nombre,contrasenia,email) VALUES ('" + anunciante.getNombre() + "', " +
                     "'" + anunciante.getContrasena() + "', " + " '" + anunciante.getEmail() + "')";
 
             Statement statement;
