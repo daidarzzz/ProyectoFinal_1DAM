@@ -45,37 +45,39 @@ $actividades = consulta_lista("SELECT * FROM ACTIVIDAD WHERE idViaje = $idViaje 
   <link rel="stylesheet" href="./css/popup.css">
 
 </head>
-  <style>
-    #user {
-      background-color: #ff396e;
-    }
+<style>
+  #user {
+    background-color: #ff396e;
+  }
 
-    #user a {
-      color: #ffffff;
-      text-decoration: none;
-    }
-  </style>
+  #user a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+</style>
+
 <body>
   <header>
     <nav>
       <div class="logo">
         <h3>PLANIFY</h3>
       </div>
-      <div class="links-buttons">
+
+      <button class="menu-hamburger" id="menuToggle">☰</button>
+
+      <div class="links-buttons" id="navContent">
         <div class="links">
           <a href="./home.php">Home</a>
           <a href="./communityPlans.php">Community plans</a>
           <a href="./landing.php">Landing</a>
         </div>
         <div class="buttons-nav">
-          <button class="but-login" id="user"><a href="./account.php"><?php echo $user['nombre']; ?></a></button>
-          <button class="but-login logout">
-            <a href="../backend/logout.php" style="text-decoration: none; color: inherit;">Log out</a>
-          </button>
-
+          <button class="but-login" id="user"><a href="./account.php">Nombre</a></button>
+          <button class="but-login logout">Log out</button>
         </div>
       </div>
     </nav>
+
   </header>
   <main>
     <div class="panel-lateral">
@@ -182,35 +184,35 @@ $actividades = consulta_lista("SELECT * FROM ACTIVIDAD WHERE idViaje = $idViaje 
       </div>
     <?php endif; ?>
 
-   <div class="contenido-principal">
+    <div class="contenido-principal">
 
       <div class="itinerario">
-        <?php 
-        for ($i = 1; $i <= $viaje['dias']; $i++): 
-            $fechaDia = date('d M', strtotime($viaje['fechaInicio'] . " + " . ($i - 1) . " days"));
+        <?php
+        for ($i = 1; $i <= $viaje['dias']; $i++):
+          $fechaDia = date('d M', strtotime($viaje['fechaInicio'] . " + " . ($i - 1) . " days"));
         ?>
-          
+
           <div class="dia-caja">
-            
+
             <h2>Día <?= $i ?> - <?= $fechaDia ?></h2>
-            
+
             <div class="actividades-lista">
-              <?php 
+              <?php
               $hayPlanes = false;
               foreach ($actividades as $act) {
-                  if ($act['dia'] == $i) {
-                      $hayPlanes = true;
-                      ?>
-                      <div class="actividad-item">
-                        <p><strong class="hora"><?= $act['hora'] ?></strong>: <?= $act['nombre'] ?></p>
-                        <p><?= $act['descripcion'] ?></p>
-                        <?= ($act['coste'] > 0) ? "<p>Cost: €" . number_format($act['coste'], 2) . "</p>" : "" ?>
-                      </div>
-                      <?php
-                  }
+                if ($act['dia'] == $i) {
+                  $hayPlanes = true;
+              ?>
+                  <div class="actividad-item">
+                    <p><strong class="hora"><?= $act['hora'] ?></strong>: <?= $act['nombre'] ?></p>
+                    <p><?= $act['descripcion'] ?></p>
+                    <?= ($act['coste'] > 0) ? "<p>Cost: €" . number_format($act['coste'], 2) . "</p>" : "" ?>
+                  </div>
+              <?php
+                }
               }
               if (!$hayPlanes) {
-                  echo '<p>No hay planes.</p>';
+                echo '<p>No hay planes.</p>';
               }
               ?>
             </div>
@@ -231,15 +233,18 @@ $actividades = consulta_lista("SELECT * FROM ACTIVIDAD WHERE idViaje = $idViaje 
       const windowPlanContainer = document.querySelector('.mainContainer')
       const butCerrar = document.getElementById('closeCreate')
 
-      butAbrir.onclick = function () {
+      butAbrir.onclick = function() {
         windowPlanContainer.style.display = "flex"
       }
 
-      butCerrar.onclick = function () {
+      butCerrar.onclick = function() {
         windowPlanContainer.style.display = "none"
       }
     </script>
   <?php endif; ?>
+
+  <script src="./js/header.js"></script>
+
 </body>
 
 </html>

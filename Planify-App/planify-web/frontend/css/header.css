@@ -79,3 +79,47 @@ nav{
 /* 
     FINAL DE ESTILOS PARA EN NAV
 */
+
+.menu-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .menu-hamburger {
+        display: block;
+        margin-right: 25px;
+    }
+
+
+    .links-buttons {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+
+    .links-buttons.active {
+        display: flex; 
+    }
+
+    nav {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+    
+    .logo {
+        width: auto;
+        text-align: left;
+    }
+}

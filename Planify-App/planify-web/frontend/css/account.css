@@ -55,3 +55,26 @@
     padding: 10px;
 }
 
+@media (max-width: 768px) {
+    
+    main {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accountDetails {
+        width: 95% !important;
+        max-width: none !important; 
+        box-sizing: border-box;     
+        padding: 20px;              
+    }
+
+    .caja2 {
+        width: 90% !important;
+        max-width: none !important;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+}

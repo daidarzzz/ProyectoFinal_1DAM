@@ -62,3 +62,44 @@
     border-radius: 10px;
     font-size: 1em;
 }
+
+
+@media (max-width: 768px) {
+    .caja2 {
+        width: 85%; 
+        padding: 25px 20px; 
+        border-radius: 20px; 
+    }
+
+    .caja2 h1 {
+        font-size: 1.8em; 
+        margin-bottom: 8px;
+    }
+
+    .caja2 p {
+        font-size: 0.95em;
+        margin-bottom: 20px;
+    }
+
+    .rellenar input,
+    .rellenar select {
+        width: 100%; 
+        box-sizing: border-box; 
+        padding: 10px; 
+        font-size: 16px; 
+
+    .rellenar {
+        margin-bottom: 15px;
+    }
+
+    .rellenar label {
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+   }
+}
+
+.titleHome {
+    margin-top: -50px;
+}
+

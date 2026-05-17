@@ -9,6 +9,7 @@ body {
 
 main {
     display: flex;
+    flex-wrap: wrap;
     gap: 25px;
     padding: 25px;
     align-items: flex-start;
@@ -281,3 +282,22 @@ main {
     box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .panel-lateral, 
+    .crearActividad, 
+    .contenido-principal {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .caja2 {
+        width: 90%;
+        padding: 20px;
+    }
+}

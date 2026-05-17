@@ -40,7 +40,7 @@ img{
 
 main {
     text-align: center;
-    padding-top: 100px;
+    padding-top: 20px;
 }
 
 main h1 {
@@ -48,23 +48,3 @@ main h1 {
     margin-bottom: 20px;
 }
 
-@media (max-width: 1000px) {
-    * {
-        font-size: 1.3em;
-       
-    }
-    nav {
-        font-size: 0.5em;
-    }
-    nav {
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        text-align: center;
-    }
-    .links-buttons, .links, .buttons-nav {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-}

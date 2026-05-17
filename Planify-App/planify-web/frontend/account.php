@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('../backend/db.php');
 $id = sesion_get('idUsuario');
 if (!$id) {
@@ -31,26 +32,24 @@ $user = consulta("SELECT * FROM USUARIO WHERE idUsuario = '$id'");
 
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <h3>PLANIFY</h3>
-            </div>
-            <div class="links-buttons">
-                <div class="links">
-                    <a href="./home.php">Home</a>
-                    <a href="./communityPlans.php">Community plans</a>
-                    <a href="./landing.php">Landing</a>
-                </div>
-                <div class="buttons-nav">
-                    <button class="but-login" id="user"><a href=""><?php echo $user['nombre']; ?></a></button>
-                    <button class="but-login logout">
-                        <a href="../backend/logout.php" style="text-decoration: none; color: inherit;">Log out</a>
-                    </button>
-
-                </div>
-            </div>
-        </nav>
-    </header>
+    <nav>
+      <div class="logo">
+        <h3>PLANIFY</h3>
+      </div>
+      <button class="menu-hamburger" id="menuToggle">☰</button>
+      <div class="links-buttons" id="navContent">
+        <div class="links">
+          <a href="./home.php">Home</a>
+          <a href="./communityPlans.php">Community plans</a>
+          <a href="./landing.php">Landing</a>
+        </div>
+        <div class="buttons-nav">
+          <button class="but-login" id="user"><a href="./account.php"><?php echo $user['nombre']; ?></a></button>
+          <button class="but-login logout"><a href="../backend/logout.php" style="text-decoration: none; color: inherit;">Log out</a></button>
+        </div>
+      </div>
+    </nav>
+  </header>
 
     <main>
 
@@ -112,6 +111,7 @@ $user = consulta("SELECT * FROM USUARIO WHERE idUsuario = '$id'");
             windowChangePassword.style.display = "none"
         }
     </script>
+    <script src="./js/header.js"></script>
 </body>
 
 </html>
