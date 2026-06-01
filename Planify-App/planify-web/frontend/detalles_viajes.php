@@ -1,12 +1,15 @@
 <?php
-
 session_start();
 include '../backend/db.php';
 
-$idUsuario = sesion_get('idUsuario');
-if (!$idUsuario) {
+$id = sesion_get('idUsuario');
+
+if (!$id) {
   redirigir("login.php");
 }
+
+$user = consulta("SELECT * FROM USUARIO WHERE idUsuario = '$id'");
+
 
 
 if (!isset($_GET['id'])) {
@@ -15,14 +18,13 @@ if (!isset($_GET['id'])) {
 
 $idViaje = intval($_GET['id']);
 
-$user = consulta("SELECT * FROM USUARIO WHERE idUsuario = '$idUsuario'");
 $viaje = consulta("SELECT * FROM VIAJE WHERE idViaje = $idViaje");
 
 if (!$viaje) {
   die("Error: El viaje no existe.");
 }
 
-$esPropietario = ($viaje['idUsuario'] == $idUsuario);
+$esPropietario = ($viaje['idUsuario'] == $id);
 
 $pais = consulta("SELECT * FROM PAIS where idPais =" . $viaje['idPais']);
 $foto = usoApi($pais['nombre']);
@@ -62,9 +64,7 @@ $actividades = consulta_lista("SELECT * FROM ACTIVIDAD WHERE idViaje = $idViaje 
       <div class="logo">
         <h3>PLANIFY</h3>
       </div>
-
       <button class="menu-hamburger" id="menuToggle">☰</button>
-
       <div class="links-buttons" id="navContent">
         <div class="links">
           <a href="./home.php">Home</a>
@@ -72,12 +72,11 @@ $actividades = consulta_lista("SELECT * FROM ACTIVIDAD WHERE idViaje = $idViaje 
           <a href="./landing.php">Landing</a>
         </div>
         <div class="buttons-nav">
-          <button class="but-login" id="user"><a href="./account.php">Nombre</a></button>
-          <button class="but-login logout">Log out</button>
+          <button class="but-login" id="user"><a href="./account.php"><?php echo $user['nombre']; ?></a></button>
+          <button class="but-login logout"><a href="../backend/logout.php" style="text-decoration: none; color: inherit;">Log out</a></button>
         </div>
       </div>
     </nav>
-
   </header>
   <main>
     <div class="panel-lateral">
