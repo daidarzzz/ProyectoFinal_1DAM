@@ -6,5 +6,5 @@
 
 
 
-\*\*\[Video del Proyecto](https://youtu.be/1UB9gJdD1dc)\*\*
+**[Ver Video del Proyecto Intermodular](https://youtu.be/1UB9gJdD1dc)**
 
